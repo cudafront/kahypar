@@ -9,17 +9,10 @@ set(PROJECT_DESCRIPTION "KaHyPar: Karlsruhe Hypergraph Partitioning")
 
 set(CMAKE_CXX_STANDARD 17)
 
-include(CTest)
-
 include_directories(${PROJECT_SOURCE_DIR})
 
 find_package(Threads REQUIRED)
 message(STATUS "Found Threads: ${CMAKE_THREAD_LIBS_INIT}")
-
-#ensure that gmock is built before tests are executed
-add_subdirectory(external_tools/googletest EXCLUDE_FROM_ALL)
-include_directories(SYSTEM ${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-include_directories(SYSTEM ${gtest_SOURCE_DIR}/../googlemock/include ${gtest_SOURCE_DIR}/../googlemock/)
 
 if(NOT CMAKE_BUILD_TYPE OR 
   ((NOT CMAKE_BUILD_TYPE STREQUAL "Debug") AND 
@@ -33,9 +26,6 @@ endif()
 
 # add third-party algorithms to project
 include_directories(external_tools)
-
-option(KAHYPAR_USE_MINIMAL_BOOST
-  "Download boost automatically and compile required libraries." OFF)
 
 option(KAHYPAR_USE_GCOV
   "Compile and run tests with gcov for coverage analysis." OFF)
