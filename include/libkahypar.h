@@ -57,8 +57,6 @@ typedef int kahypar_partition_id_t;
 
 KAHYPAR_API kahypar_context_t* kahypar_context_new();
 KAHYPAR_API void kahypar_context_free(kahypar_context_t* kahypar_context);
-KAHYPAR_API void kahypar_configure_context_from_file(kahypar_context_t* kahypar_context,
-                                                     const char* ini_file_name);
 
 KAHYPAR_API void kahypar_hypergraph_free(kahypar_hypergraph_t* hypergraph);
 

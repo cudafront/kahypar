@@ -164,36 +164,6 @@ if(KAHYPAR_USE_GCOV)
 
 endif(KAHYPAR_USE_GCOV)
 
-if(KAHYPAR_USE_MINIMAL_BOOST)
-  execute_process(COMMAND cmake -P ${CMAKE_CURRENT_SOURCE_DIR}/scripts/download_boost.cmake)
-
-  include_directories(SYSTEM ${CMAKE_CURRENT_BINARY_DIR}/external_tools/boost/)
-
-  # glob boost sources
-  file(GLOB MINI_BOOST_SOURCES ${CMAKE_CURRENT_BINARY_DIR}/external_tools/boost/libs/program_options/src/*.cpp)
-
-  add_library(mini_boost STATIC ${MINI_BOOST_SOURCES})
-  set_target_properties(mini_boost PROPERTIES LINKER_LANGUAGE CXX)
-  set(Boost_LIBRARIES mini_boost)
-  set(Boost_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/external_tools/boost/boost/)
-  include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-else()
-  find_package(Boost 1.69 REQUIRED COMPONENTS program_options)
-  if(Boost_FOUND)
-    include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-    set(KAHYPAR_INCLUDE_DIRS ${Boost_INCLUDE_DIRS} ${KAHYPAR_INCLUDE_DIRS})
-    set(KAHYPAR_LINK_LIBRARIES ${Boost_LIBRARIES} ${KAHYPAR_LINK_LIBRARIES})
-    message(STATUS "Boost Include: ${Boost_INCLUDE_DIRS}")
-    message(STATUS "Boost Library Dirs: ${Boost_LIBRARY_DIRS}")
-    message(STATUS "Boost Libraries: ${Boost_LIBRARIES}")
-    if(WIN32)
-      add_definitions(-DBOOST_ALL_NO_LIB)
-      add_definitions(-DBOOST_PROGRAM_OPTIONS_DYN_LINK=1)
-    endif()
-
-  endif()
-endif()
-
 # add a target to generate API documentation with Doxygen
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
@@ -326,15 +296,6 @@ endif()
 message(STATUS "CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
 message(STATUS "CMAKE_CXX_FLAGS_RELEASE: ${CMAKE_CXX_FLAGS_RELEASE}")
 message(STATUS "CMAKE_CXX_FLAGS_DEBUG: ${CMAKE_CXX_FLAGS_DEBUG}")
-
-
-add_subdirectory(kahypar/application)
-
-if(BUILD_TESTING)
-  include(gmock)
-  enable_testing()
-  add_subdirectory(tests)
-endif()
 
 add_subdirectory(tools)
 add_subdirectory(lib)
