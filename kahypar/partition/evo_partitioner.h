@@ -25,8 +25,6 @@
 #include <chrono>
 #include <vector>
 
-#include "gtest/gtest_prod.h"
-
 #include "kahypar/datastructure/hypergraph.h"
 #include "kahypar/partition/context.h"
 #include "kahypar/partition/context_enum_classes.h"

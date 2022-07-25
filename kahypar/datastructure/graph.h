@@ -30,8 +30,6 @@
 #include <utility>
 #include <vector>
 
-#include "gtest/gtest_prod.h"
-
 #include "kahypar/macros.h"
 
 #include "kahypar/datastructure/sparse_map.h"

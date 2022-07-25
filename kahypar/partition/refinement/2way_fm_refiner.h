@@ -27,8 +27,6 @@
 #include <utility>
 #include <vector>
 
-#include "gtest/gtest_prod.h"
-
 #include "kahypar/datastructure/binary_heap.h"
 #include "kahypar/datastructure/fast_reset_array.h"
 #include "kahypar/datastructure/fast_reset_flag_array.h"

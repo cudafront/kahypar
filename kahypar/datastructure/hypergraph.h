@@ -32,8 +32,6 @@
 #include <utility>
 #include <vector>
 
-#include "gtest/gtest_prod.h"
-
 #include "kahypar/datastructure/connectivity_sets.h"
 #include "kahypar/datastructure/fast_reset_flag_array.h"
 #include "kahypar/datastructure/sparse_set.h"
