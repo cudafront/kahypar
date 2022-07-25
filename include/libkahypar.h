@@ -58,8 +58,6 @@ typedef int kahypar_partition_id_t;
 KAHYPAR_API kahypar_context_t* kahypar_context_new();
 KAHYPAR_API void kahypar_context_free(kahypar_context_t* kahypar_context);
 
-KAHYPAR_API void kahypar_hypergraph_free(kahypar_hypergraph_t* hypergraph);
-
 KAHYPAR_API void kahypar_set_custom_target_block_weights(const kahypar_partition_id_t num_blocks,
                                                          const kahypar_hypernode_weight_t* block_weights,
                                                          kahypar_context_t* kahypar_context);

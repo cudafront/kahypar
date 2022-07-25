@@ -6,6 +6,7 @@ set(PROJECT_VENDOR "Sebastian Schlag")
 set(PROJECT_CONTACT "kahypar@sebastianschlag.de")
 set(PROJECT_URL "http://www.kahypar.org")
 set(PROJECT_DESCRIPTION "KaHyPar: Karlsruhe Hypergraph Partitioning")
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -154,7 +155,7 @@ if(KAHYPAR_USE_GCOV)
 
 endif(KAHYPAR_USE_GCOV)
 
-find_package(Boost REQUIRED)
+find_package(Boost 1.69.0 REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
 # add a target to generate API documentation with Doxygen
