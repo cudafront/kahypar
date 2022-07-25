@@ -126,10 +126,6 @@ class Modularity {
   }
 
  private:
-  FRIEND_TEST(AModularityMeasure, IsCorrectInitialized);
-  FRIEND_TEST(AModularityMeasure, RemoveNodeFromCommunity);
-  FRIEND_TEST(AModularityMeasure, InsertNodeInCommunity);
-  FRIEND_TEST(AModularityMeasure, RemoveNodeFromCommunityWithMoreThanOneNode);
 
   EdgeWeight modularity() {
     EdgeWeight q = 0.0L;

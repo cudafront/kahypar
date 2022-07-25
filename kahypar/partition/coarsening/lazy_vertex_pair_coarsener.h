@@ -77,7 +77,6 @@ class LazyVertexPairCoarsener final : public ICoarsener,
   LazyVertexPairCoarsener& operator= (LazyVertexPairCoarsener&&) = delete;
 
  private:
-  FRIEND_TEST(ALazyUpdateCoarsener, InvalidatesAdjacentHypernodesInsteadOfReratingThem);
 
   void coarsenImpl(const HypernodeID limit) override final {
     _pq.clear();

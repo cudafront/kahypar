@@ -59,10 +59,6 @@ class BFSInitialPartitioner : public IInitialPartitioner,
   BFSInitialPartitioner& operator= (BFSInitialPartitioner&&) = delete;
 
  private:
-  FRIEND_TEST(ABFSBisectionInitialPartioner,
-              HasCorrectInQueueMapValuesAfterPushingIncidentHypernodesNodesIntoQueue);
-  FRIEND_TEST(ABFSBisectionInitialPartioner,
-              HasCorrectHypernodesInQueueAfterPushingIncidentHypernodesIntoQueue);
 
   void pushIncidentHypernodesIntoQueue(std::queue<HypernodeID>& queue,
                                        const HypernodeID hn) {

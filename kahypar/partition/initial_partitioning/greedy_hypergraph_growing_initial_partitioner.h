@@ -75,25 +75,6 @@ class GreedyHypergraphGrowingInitialPartitioner : public IInitialPartitioner,
   GreedyHypergraphGrowingInitialPartitioner& operator= (GreedyHypergraphGrowingInitialPartitioner&&) = delete;
 
  private:
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest, InsertionOfAHypernodeIntoPQ);
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest,
-              TryingToInsertAHypernodeIntoTheSamePQAsHisCurrentPart);
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest,
-              TryingToInsertAFixedVertex);
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest,
-              ChecksCorrectMaxGainValueAndHypernodeAfterPushingSomeHypernodesIntoPriorityQueue);
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest,
-              ChecksCorrectGainValueAfterUpdatePriorityQueue);
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest,
-              ChecksCorrectMaxGainValueAfterDeltaGainUpdate);
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest,
-              ChecksCorrectHypernodesAndGainValuesInPQAfterAMove);
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest,
-              ChecksCorrectMaxGainValueAfterDeltaGainUpdateWithUnassignedPartMinusOne);
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest,
-              DeletesAssignedHypernodesFromPriorityQueue);
-  FRIEND_TEST(AGreedyHypergraphGrowingFunctionalityTest,
-              CheckIfAllEnabledPQContainsAtLeastOneHypernode);
 
   void partitionImpl() override final {
     Base::multipleRunsInitialPartitioning();

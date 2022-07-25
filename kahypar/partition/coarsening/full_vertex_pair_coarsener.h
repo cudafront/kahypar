@@ -78,8 +78,6 @@ class FullVertexPairCoarsener final : public ICoarsener,
   FullVertexPairCoarsener& operator= (FullVertexPairCoarsener&&) = delete;
 
  private:
-  FRIEND_TEST(ACoarsener, SelectsNodePairToContractBasedOnHighestRating);
-
   void coarsenImpl(const HypernodeID limit) override final {
     _pq.clear();
 

@@ -87,9 +87,6 @@ class EvoPartitioner {
   }
 
  private:
-  FRIEND_TEST(TheEvoPartitioner, ProperlyGeneratesTheInitialPopulation);
-  FRIEND_TEST(TheEvoPartitioner, RespectsLimitsOfTheInitialPopulation);
-  FRIEND_TEST(TheEvoPartitioner, IsCorrectlyDecidingTheActions);
   inline void generateInitialPopulation(Hypergraph& hg, Context& context) {
     // INITIAL POPULATION
     if (context.evolutionary.dynamic_population_size) {

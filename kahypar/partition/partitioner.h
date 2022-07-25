@@ -101,22 +101,6 @@ class Partitioner {
   inline void partition(Hypergraph& hypergraph, Context& context);
 
  private:
-  FRIEND_TEST(APartitionerWithHyperedgeSizeThreshold, RemovesHyperedgesExceedingThreshold);
-  FRIEND_TEST(APartitionerWithHyperedgeSizeThreshold, RestoresHyperedgesExceedingThreshold);
-  FRIEND_TEST(APartitionerWithHyperedgeSizeThreshold,
-              PartitionsUnpartitionedHypernodesAfterRestore);
-  FRIEND_TEST(APartitionerWithHyperedgeSizeThreshold,
-              AssignsAllRemainingHypernodesToDefinedPartition);
-  FRIEND_TEST(APartitionerWithHyperedgeSizeThreshold,
-              TriesToMinimizesCutIfNoPinOfRemainingHyperedgeIsPartitioned);
-  FRIEND_TEST(APartitionerWithHyperedgeSizeThreshold,
-              TriesToMinimizesCutIfOnlyOnePartitionIsUsed);
-  FRIEND_TEST(APartitionerWithHyperedgeSizeThreshold,
-              DistributesAllRemainingHypernodesToMinimizeImbalaceIfCutCannotBeMinimized);
-  FRIEND_TEST(APartitioner, UsesKaHyParPartitioningOnCoarsestHypergraph);
-  FRIEND_TEST(APartitioner, UncoarsensTheInitiallyPartitionedHypergraph);
-  FRIEND_TEST(APartitioner, CalculatesPinCountsOfAHyperedgesAfterInitialPartitioning);
-  FRIEND_TEST(APartitioner, CanUseVcyclesAsGlobalSearchStrategy);
   friend class io::APartitionOfAHypergraph_IsCorrectlyWrittenToFile_Test;
   friend class metrics::APartitionedHypergraph;
 

@@ -83,9 +83,6 @@ class KWayFMRefiner final : public IRefiner,
   KWayFMRefiner& operator= (KWayFMRefiner&&) = delete;
 
  private:
-  FRIEND_TEST(AKwayFMRefinerDeathTest, ConsidersSingleNodeHEsDuringInitialGainComputation);
-  FRIEND_TEST(AKwayFMRefinerDeathTest, ConsidersSingleNodeHEsDuringInducedGainComputation);
-  FRIEND_TEST(AKwayFMRefiner, KnowsIfAHyperedgeIsFullyActive);
 
   void initializeImpl(const HyperedgeWeight max_gain) override final {
     if (!_is_initialized) {

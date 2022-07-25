@@ -151,9 +151,6 @@ class Louvain {
   }
 
  private:
-  FRIEND_TEST(ALouvainAlgorithm, DoesOneLouvainPass);
-  FRIEND_TEST(ALouvainAlgorithm, AssingsMappingToNextLevelFinerGraph);
-  FRIEND_TEST(ALouvainKarateClub, DoesLouvainAlgorithm);
 
   void assignClusterToNextLevelFinerGraph(Graph& fine_graph, const Graph& coarse_graph,
                                           const std::vector<NodeID>& mapping) {
