@@ -154,6 +154,9 @@ if(KAHYPAR_USE_GCOV)
 
 endif(KAHYPAR_USE_GCOV)
 
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
 # add a target to generate API documentation with Doxygen
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
@@ -247,7 +250,6 @@ elseif(MSVC)
   endif()
   # raise warnings as errors
   #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
-
 
   # https://msdn.microsoft.com/en-us/library/ms173499.aspx
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
