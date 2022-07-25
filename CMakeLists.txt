@@ -34,9 +34,6 @@ endif()
 # add third-party algorithms to project
 include_directories(external_tools)
 
-option(KAHYPAR_PYTHON_INTERFACE
-  "Enable building the python interface" OFF)
-
 option(KAHYPAR_USE_MINIMAL_BOOST
   "Download boost automatically and compile required libraries." OFF)
 
@@ -341,7 +338,3 @@ endif()
 
 add_subdirectory(tools)
 add_subdirectory(lib)
-
-if(KAHYPAR_PYTHON_INTERFACE)
-  add_subdirectory(python)
-endif()
